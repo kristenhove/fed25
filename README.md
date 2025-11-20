@@ -89,17 +89,56 @@ https://www.sanrio.com/
   <summary>uitwerken voor 1<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+In dit eerste deel van het proces ben ik vooral bezig geweest met het structureren van de pagina: de header, main en footer overzichtelijk indelen en bepalen waar kopjes, sublinks en de zoekbalk komen. Ik heb ook opgezocht of je meerdere navs mag gebruiken, wat kan voor bijvoorbeeld een hoofdmenu en een footer. Daarnaast heb ik gekeken naar sections in sections, wat semantisch correct is zolang elke section een eigen thema of subcategorie heeft. Alle informatie heb ik gehaald uit de presentaties tijdens de lessen en de MDN-website.
 
+VOORBEELD:   <section>
+            <h2>WORLD OF SANRIO</h2>
+            <section>
+                <h3>SITE GUIDE</h3>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Characters</a></li>
+                    <li><a href="#">About Sanrio</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>CHARACTERS</h3>
+                <ul>
+                    <li><a href="#">Hello Kitty</a></li>
+                    <li><a href="#">My Melody</a></li>
+                    <li><a href="#">Kuromi</a></li>
+                    <li><a href="#">Cinnamoroll</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>NEED HELP?</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>RESOURCES</h3>
+                <ul>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Store Locator</a></li>
+                </ul>
+            </section>
+        </section>
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  | student 1    Yuzhong | student 2      Anastasia    | student 3   Eme  | student 4   Kris     |
+  | ---                  | ---                         | ---              | ---                  |
+  | dit bespreken        | en dit                      | en ik dit        | verloopt goed        |
+  | en dat ook nog       | dit als er tijd is          | nog een punt     | alleen vraag over    |
+  | ...                  | ...                         | ...              | zoekbalk             |
 
 
   ### Verslag van meeting
