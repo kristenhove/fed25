@@ -1,31 +1,263 @@
-/**************/
-/* CSS REMEDY */
-/**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
-}
+/* ====== FONTS & BASE ====== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-
-
-
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
 :root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+  --pink: #ff9ac4;
+  --dark: #222;
+  --light: #fff;
+  --soft-gray: #f6f6f6;
+  --border: #e3e3e3;
+  --blue-link: #3869d4;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
+body {
+  background: var(--light);
+  color: var(--dark);
+  font-size: 15px;
+  line-height: 1.6;
+}
 
+/* ====== HEADER ====== */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
 
+header img {
+  height: 38px;
+}
 
-/****************/
-/* JOUW STYLING */
-/****************/
+header nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+}
 
-/* jouw code */
+header nav a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--dark);
+}
 
+header form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+header input[type="search"] {
+  padding: 6px 8px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+}
+
+header button {
+  background: var(--pink);
+  border: none;
+  padding: 6px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--light);
+  font-size: 13px;
+}
+
+/* ====== MAIN ====== */
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding-bottom: 40px;
+}
+
+h1 {
+  text-align: center;
+  margin: 18px 0;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ====== PRODUCT ARTICLES ====== */
+article {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+article header p {
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+article h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+article a {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  border: 1px solid var(--dark);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+  transition: .2s;
+}
+
+article a:hover {
+  background: var(--dark);
+  color: var(--light);
+}
+
+/* ====== ICON LIST ====== */
+main > nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 0;
+  list-style: none;
+}
+
+main > nav a {
+  text-decoration: none;
+  background: var(--soft-gray);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 13px;
+  color: var(--dark);
+}
+
+main > nav a:hover {
+  background: var(--pink);
+  color: var(--light);
+  border-color: var(--pink);
+}
+
+/* ====== CHARACTERS ====== */
+section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  list-style: none;
+  margin-top: 20px;
+}
+
+section ul li {
+  text-align: center;
+}
+
+section ul img {
+  width: 75px;
+}
+
+/* ====== JUST FOR YOU CARDS ====== */
+section article {
+  text-align: center;
+  padding: 20px;
+}
+
+section article img {
+  width: 150px;
+  border-radius: 10px;
+}
+
+section h2 {
+  text-align: center;
+  margin: 18px 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ====== EMAIL SIGNUP ====== */
+section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+section input[type="email"] {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  width: 260px;
+}
+
+section button {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  background: var(--pink);
+  color: var(--light);
+  cursor: pointer;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background: var(--soft-gray);
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+footer section {
+  margin-bottom: 20px;
+}
+
+footer h2 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+footer ul {
+  list-style: none;
+  line-height: 28px;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--blue-link);
+  font-size: 14px;
+}
+
+footer p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 11px;
+  color: #666;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  header nav, header form {
+    display: none;
+  }
+}
