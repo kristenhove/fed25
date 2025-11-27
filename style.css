@@ -25,7 +25,7 @@ main, section, article, nav, ul {
 header {
   position: sticky;
   top: 0;
-  background: white;
+  background: #fff;
   z-index: 1000;
   padding: 0.7rem 1rem;
   display: flex;
@@ -38,7 +38,7 @@ header img {
   width: 140px;
 }
 
-/* ===== SEARCH BAR ===== */
+/* SEARCH BAR */
 header form {
   display: flex;
   gap: 0.5rem;
@@ -51,32 +51,61 @@ header form label {
 
 header form input {
   flex: 1;
-  padding: 0.4rem 0.8rem;
+  padding: 0.35rem 0.7rem; /* fixpakket kleiner & mooi */
+  font-size: 0.9rem;
   border: 1px solid #aaa;
   border-radius: 5px;
 }
 
 header form button {
-  padding: 0.4rem 0.9rem;
-  background-color: #ff69b4;
+  padding: 0.35rem 0.7rem; /* fixpakket kleiner & mooi */
+  font-size: 0.9rem;
+  background-color: #ff8ac1;
   color: white;
   border: none;
   border-radius: 5px;
   font-weight: bold;
 }
 
-/* ===== NAVBAR ===== */
-header nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  list-style: none;
+/* HAMBURGER MENU */
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
 }
 
-header nav a {
+/* MOBILE NAV (dropdown) */
+.mobile-nav {
+  display: none;
+  background: #fff;
+  border-bottom: 2px solid #f0ddef;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 10px;
+}
+
+.mobile-nav li {
+  padding: 8px 0;
+}
+
+.mobile-nav a {
   text-decoration: none;
   color: #333;
   font-weight: 600;
+}
+
+/* NAVBAR DESKTOP FIX */
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centreren */
+  gap: 0.6rem; /* fixpakket */
+  list-style: none;
+  text-align: center;
+  font-size: 0.85rem; /* fixpakket */
 }
 
 /* ===== CHARACTERS GRID ===== */
@@ -99,6 +128,27 @@ section ul figcaption {
   text-align: center;
 }
 
+/* JUST FOR YOU 2 COLUMNS */
+section:has(h3), section:has(p + article) article {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 1.5rem;
+}
+
+section:has(h3), section:has(p + article) {
+  padding: 0 1rem;
+}
+
+/* CONTENT SPACING */
+main > *, section > *, article > * {
+  margin-bottom: 1rem;
+}
+
+article header p {
+  margin-bottom: 0.3rem;
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: #f3f3f3;
@@ -108,6 +158,10 @@ footer {
 
 footer section {
   margin-bottom: 1.2rem;
+}
+
+footer h2, footer h3 {
+  font-weight: 700; /* fixpakket */
 }
 
 footer h2 {
@@ -120,24 +174,17 @@ footer h3 {
   font-size: 1rem;
 }
 
-footer ul {
+footer ul, footer nav ul {
   list-style: none;
   display: flex;
   flex-direction: column; /* alles onder elkaar */
-  gap: 0.4rem;
+  gap: 0.3rem; /* fixpakket spacing */
 }
 
 footer a {
   text-decoration: none;
   color: #333;
-  font-size: 0.9rem;
-}
-
-footer nav ul {
-  display: flex;
-  flex-direction: column; /* social links ook onder elkaar */
-  gap: 0.4rem;
-  margin-bottom: 1rem;
+  font-size: 0.85rem; /* fixpakket */
 }
 
 footer p {
@@ -155,4 +202,21 @@ main a {
   border-radius: 5px;
   margin-top: 0.6rem;
   font-weight: bold;
+}
+
+/* ===== PASTEL BONUS (optioneel) ===== */
+:root {
+  --pink: #FFB7D5;
+  --light-pink: #FFE6F1;
+  --blue: #C6E6FF;
+  --yellow: #FFE8A3;
+  --green: #B2F2BB;
+}
+
+/* Background pastel voorbeelden */
+body {
+  background-color: var(--light-pink);
+}
+header, footer {
+  background-color: var(--pink);
 }
