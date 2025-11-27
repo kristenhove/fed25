@@ -219,4 +219,13 @@
     <p><small>© 2025 SANRIO CO., LTD. All Rights Reserved</small></p>
   </footer>
 </body>
+  <script>
+  const menuBtn = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  menuBtn.addEventListener('click', () => {
+    mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+  });
+</script>
+
 </html>
