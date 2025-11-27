@@ -1,282 +1,158 @@
-/* ====== FONTS & BASE ====== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-:root {
-  --pink: #ff9ac4;
-  --dark: #222;
-  --light: #fff;
-  --soft-gray: #f6f6f6;
-  --border: #e3e3e3;
-  --blue-link: #3869d4;
-}
-
+/* ===== GLOBAL ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: var(--light);
-  color: var(--dark);
-  font-size: 15px;
-  line-height: 1.6;
-  padding: 0 14px; /* meer ruimte vanaf de rand */
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+  padding-top: 120px; /* ruimte omdat header sticky is */
 }
 
-/* ====== HEADER ====== */
+img {
+  width: 100%;
+  display: block;
+}
+
+main, section, article, nav, ul {
+  padding: 0 1.2rem; /* meer ruimte van de rand af */
+}
+
+/* ===== HEADER ===== */
 header {
   position: sticky;
   top: 0;
-  background: var(--light);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--border);
+  background: white;
   z-index: 1000;
+  padding: 0.7rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-bottom: 1px solid #ddd;
 }
 
 header img {
-  height: 32px;
+  width: 140px;
 }
 
-/* zoekbalk blijft op mobiel */
+/* ===== SEARCH BAR ===== */
 header form {
-  flex-grow: 1;
-  margin-left: 12px;
   display: flex;
-  align-items: center;
-  gap: 6px;
-  max-width: 190px;
+  gap: 0.5rem;
+  width: 100%;
 }
 
-header label {
+header form label {
   display: none;
 }
 
-header input[type="search"] {
-  width: 100%;
-  padding: 6px 10px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  font-size: 13px;
+header form input {
+  flex: 1;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
 }
 
-header button {
-  background: var(--pink);
+header form button {
+  padding: 0.4rem 0.9rem;
+  background-color: #ff69b4;
+  color: white;
   border: none;
-  padding: 6px 10px;
-  border-radius: 20px;
-  cursor: pointer;
-  color: var(--light);
-  font-size: 13px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-/* nav weg op mobiel maar zoek blijft! */
-@media (max-width: 768px) {
-  header nav {
-    display: none;
-  }
-}
-
-/* ====== MAIN CONTENT ====== */
-main {
-  max-width: 1100px;
-  margin: auto;
-}
-
-h1 {
-  text-align: center;
-  margin: 18px 0;
-  font-size: 26px;
-  font-weight: 600;
-}
-
-figure img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* ====== PRODUCT ARTICLES ====== */
-article {
-  padding: 24px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-article header p {
-  color: #777;
-  font-size: 11px;
-  letter-spacing: 1px;
-  margin-bottom: 4px;
-}
-
-article h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-article a {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 8px 14px;
-  border-radius: 30px;
-  border: 1px solid var(--dark);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--dark);
-  transition: .2s;
-}
-
-article a:hover {
-  background: var(--dark);
-  color: var(--light);
-}
-
-/* ====== CATEGORY BUTTONS ====== */
-main > nav ul {
+/* ===== NAVBAR ===== */
+header nav ul {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 20px 0;
+  gap: 0.8rem;
   list-style: none;
 }
 
-main > nav a {
+header nav a {
   text-decoration: none;
-  background: var(--soft-gray);
-  border: 1px solid var(--border);
-  padding: 8px 16px;
-  border-radius: 25px;
-  font-size: 13px;
-  color: var(--dark);
+  color: #333;
+  font-weight: 600;
 }
 
-main > nav a:hover {
-  background: var(--pink);
-  color: var(--light);
-  border-color: var(--pink);
-}
-
-/* ====== WHO'S YOUR FAVORITE? ====== */
+/* ===== CHARACTERS GRID ===== */
 section ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
   list-style: none;
-  margin-top: 20px;
-}
-
-section ul li {
-  width: 80px;
+  padding-top: 1rem;
   text-align: center;
 }
 
-section ul img {
-  width: 68px;
-  height: 68px;
-  object-fit: contain;
+section ul figure img {
+  width: 100%;
 }
 
-/* caption gelijk niveau */
 section ul figcaption {
-  font-size: 12px;
-  margin-top: 6px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ====== JUST FOR YOU ITEMS ====== */
-section article {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
   text-align: center;
-  padding: 20px;
 }
 
-section article img {
-  width: 150px;
-  border-radius: 10px;
-}
-
-section h2 {
-  text-align: center;
-  margin: 18px 0;
-  font-size: 22px;
-  font-weight: 600;
-}
-
-/* ====== EMAIL FORM ====== */
-section form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-section input[type="email"] {
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: 25px;
-  width: 260px;
-}
-
-section button {
-  padding: 10px 18px;
-  border-radius: 30px;
-  border: none;
-  background: var(--pink);
-  color: var(--light);
-  cursor: pointer;
-}
-
-/* ====== FOOTER ====== */
+/* ===== FOOTER ===== */
 footer {
-  background: var(--soft-gray);
-  padding: 40px 14px;
-  margin-top: 40px;
-}
-
-footer sections,
-footer ul {
-  list-style: none;
-  line-height: 26px;
+  background: #f3f3f3;
+  margin-top: 2rem;
+  padding: 2rem 1.2rem;
 }
 
 footer section {
-  margin-bottom: 22px;
+  margin-bottom: 1.2rem;
 }
 
 footer h2 {
-  font-size: 20px;
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
 }
 
 footer h3 {
-  margin-bottom: 6px;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* alles onder elkaar */
+  gap: 0.4rem;
 }
 
 footer a {
   text-decoration: none;
-  color: var(--blue-link);
-  font-size: 14px;
+  color: #333;
+  font-size: 0.9rem;
 }
 
-/* socials ook enkel onder elkaar */
 footer nav ul {
-  display: block;
+  display: flex;
+  flex-direction: column; /* social links ook onder elkaar */
+  gap: 0.4rem;
+  margin-bottom: 1rem;
 }
 
 footer p {
   text-align: center;
-  margin-top: 20px;
-  font-size: 11px;
-  color: #666;
+  margin-top: 1rem;
+}
+
+/* ===== LINKS IN MAIN ARTICLES ===== */
+main a {
+  display: inline-block;
+  background-color: #ff69b4;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  margin-top: 0.6rem;
+  font-weight: bold;
 }
