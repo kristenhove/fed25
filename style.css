@@ -22,6 +22,7 @@ body {
   color: var(--dark);
   font-size: 15px;
   line-height: 1.6;
+  padding: 0 14px; /* meer ruimte vanaf de rand */
 }
 
 /* ====== HEADER ====== */
@@ -32,36 +33,32 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 20px;
+  padding: 10px 14px;
   border-bottom: 1px solid var(--border);
-  z-index: 10;
+  z-index: 1000;
 }
 
 header img {
-  height: 38px;
+  height: 32px;
 }
 
-header nav ul {
-  display: flex;
-  gap: 18px;
-  list-style: none;
-}
-
-header nav a {
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 14px;
-  color: var(--dark);
-}
-
+/* zoekbalk blijft op mobiel */
 header form {
+  flex-grow: 1;
+  margin-left: 12px;
   display: flex;
   align-items: center;
   gap: 6px;
+  max-width: 190px;
+}
+
+header label {
+  display: none;
 }
 
 header input[type="search"] {
-  padding: 6px 8px;
+  width: 100%;
+  padding: 6px 10px;
   border-radius: 20px;
   border: 1px solid var(--border);
   font-size: 13px;
@@ -77,11 +74,17 @@ header button {
   font-size: 13px;
 }
 
-/* ====== MAIN ====== */
+/* nav weg op mobiel maar zoek blijft! */
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+}
+
+/* ====== MAIN CONTENT ====== */
 main {
   max-width: 1100px;
   margin: auto;
-  padding-bottom: 40px;
 }
 
 h1 {
@@ -98,7 +101,7 @@ figure img {
 
 /* ====== PRODUCT ARTICLES ====== */
 article {
-  padding: 30px 0;
+  padding: 24px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -133,7 +136,7 @@ article a:hover {
   color: var(--light);
 }
 
-/* ====== ICON LIST ====== */
+/* ====== CATEGORY BUTTONS ====== */
 main > nav ul {
   display: flex;
   justify-content: center;
@@ -159,25 +162,38 @@ main > nav a:hover {
   border-color: var(--pink);
 }
 
-/* ====== CHARACTERS ====== */
+/* ====== WHO'S YOUR FAVORITE? ====== */
 section ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 22px;
+  gap: 18px;
   list-style: none;
   margin-top: 20px;
 }
 
 section ul li {
+  width: 80px;
   text-align: center;
 }
 
 section ul img {
-  width: 75px;
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
 }
 
-/* ====== JUST FOR YOU CARDS ====== */
+/* caption gelijk niveau */
+section ul figcaption {
+  font-size: 12px;
+  margin-top: 6px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ====== JUST FOR YOU ITEMS ====== */
 section article {
   text-align: center;
   padding: 20px;
@@ -195,7 +211,7 @@ section h2 {
   font-weight: 600;
 }
 
-/* ====== EMAIL SIGNUP ====== */
+/* ====== EMAIL FORM ====== */
 section form {
   display: flex;
   flex-direction: column;
@@ -222,24 +238,29 @@ section button {
 /* ====== FOOTER ====== */
 footer {
   background: var(--soft-gray);
-  padding: 40px 20px;
+  padding: 40px 14px;
   margin-top: 40px;
 }
 
+footer sections,
+footer ul {
+  list-style: none;
+  line-height: 26px;
+}
+
 footer section {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 footer h2 {
   font-size: 20px;
   text-align: center;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-footer ul {
-  list-style: none;
-  line-height: 28px;
+footer h3 {
+  margin-bottom: 6px;
 }
 
 footer a {
@@ -248,16 +269,14 @@ footer a {
   font-size: 14px;
 }
 
+/* socials ook enkel onder elkaar */
+footer nav ul {
+  display: block;
+}
+
 footer p {
   text-align: center;
   margin-top: 20px;
   font-size: 11px;
   color: #666;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  header nav, header form {
-    display: none;
-  }
 }
